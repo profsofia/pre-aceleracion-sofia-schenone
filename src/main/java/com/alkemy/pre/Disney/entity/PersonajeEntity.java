@@ -23,6 +23,6 @@ public class PersonajeEntity {
 
     //peliculasAsociadas
 
-    @ManyToMany(mappedBy = "genero", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "personaje", cascade = CascadeType.ALL)
     private List<PeliculaEntity> peliculaEntities = new ArrayList<>();
 }
