@@ -22,6 +22,8 @@ public class GeneroEntity {
 
     //peliculasAsociadas
     //una pelicula puede pertenecer a un genero, un genero puede tener muchas peliculas..
+    /*
+    * LA relación uno a muchos, en este caso un genero para muchas películas, solo puede tener como tipo de dato un objeto */
     @OneToMany(mappedBy = "genero", cascade = CascadeType.ALL)
     @JoinColumn(name = "genero_id")
     private List<PeliculaEntity> peliculas = new ArrayList<>();
