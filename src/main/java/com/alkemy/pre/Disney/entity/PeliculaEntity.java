@@ -53,10 +53,10 @@ public class PeliculaEntity {
 
     //Relacion entre personajes y peliculas
     @ManyToMany
-            /*(cascade = {
+            (cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
-    })*/
+    })
     @JoinTable(
             name = "personajes_peliculas",
             joinColumns = @JoinColumn(name = "personaje_id"),
