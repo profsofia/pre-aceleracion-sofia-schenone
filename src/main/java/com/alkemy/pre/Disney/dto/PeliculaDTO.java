@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-@Getter @Setter
+
+@Getter
+@Setter
 public class PeliculaDTO {
     private Long id;
 

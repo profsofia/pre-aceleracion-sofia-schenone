@@ -16,9 +16,10 @@ public class PersonajeController {
 
     @Autowired
     private PersonajeService personajeService;
+
     //generar un personaje
     @PostMapping
-    public ResponseEntity<PersonajeDTO> guardarPersonaje(@RequestBody PersonajeDTO personajeDTO){
+    public ResponseEntity<PersonajeDTO> guardarPersonaje(@RequestBody PersonajeDTO personajeDTO) {
         PersonajeDTO personajeGuardado = personajeService.guardar(personajeDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(personajeGuardado);
     }

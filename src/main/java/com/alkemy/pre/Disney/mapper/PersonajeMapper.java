@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 public class PersonajeMapper {
-    public PersonajeEntity personajeDTOtoEntity(PersonajeDTO dto){
+    public PersonajeEntity personajeDTOtoEntity(PersonajeDTO dto) {
         PersonajeEntity personaje = new PersonajeEntity();
         //cuando llega un dto no tiene id, por eso no se setea
         personaje.setImagen(dto.getImagen());
@@ -19,7 +19,8 @@ public class PersonajeMapper {
         personaje.setPeso(dto.getPeso());
         return personaje;
     }
-    public PersonajeDTO personajeEntitytoDTO(PersonajeEntity entity){
+
+    public PersonajeDTO personajeEntitytoDTO(PersonajeEntity entity) {
         PersonajeDTO dto = new PersonajeDTO();
         dto.setId(entity.getId());
         dto.setImagen(entity.getImagen());
@@ -29,11 +30,12 @@ public class PersonajeMapper {
         dto.setPeso(entity.getPeso());
         return dto;
     }
-    public List<PersonajeDTO> personajeEntityListToDTOList(List<PersonajeEntity> personajeEntities){
+
+    public List<PersonajeDTO> personajeEntityListToDTOList(List<PersonajeEntity> personajeEntities) {
         //creamos la lista de dtos
         List<PersonajeDTO> personajeDTOList = new ArrayList<>();
         //hacemos un ciclo para que se llene la lista
-        for (PersonajeEntity personaje : personajeEntities){
+        for (PersonajeEntity personaje : personajeEntities) {
             personajeDTOList.add(personajeEntitytoDTO(personaje));
         }
         return personajeDTOList;

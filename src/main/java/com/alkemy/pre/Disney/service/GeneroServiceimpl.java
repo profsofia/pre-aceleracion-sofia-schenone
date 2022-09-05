@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GeneroServiceimpl implements GeneroService{
+public class GeneroServiceimpl implements GeneroService {
 
     @Autowired
     private GeneroMapper generoMapper;
     @Autowired
     private GeneroRepository generoRepository;
 
-    public GeneroDTO guardar(GeneroDTO dto){
+    public GeneroDTO guardar(GeneroDTO dto) {
         //se convierte el dto que llega a una entidad...
         GeneroEntity entity = generoMapper.generoDTOtoEntity(dto);
         //guardamos la entidad

@@ -23,7 +23,7 @@ public class GeneroEntity {
     //peliculasAsociadas
     //una pelicula puede pertenecer a un genero, un genero puede tener muchas peliculas..
     /*
-    * LA relación uno a muchos, en este caso un genero para muchas películas, solo puede tener como tipo de dato un objeto */
+     * LA relación uno a muchos, en este caso un genero para muchas películas, solo puede tener como tipo de dato un objeto */
     @OneToMany(mappedBy = "genero")
     //@JoinColumn(name = "genero_id")
     //en este caso, la relación será Lazy.... uno a muchos...

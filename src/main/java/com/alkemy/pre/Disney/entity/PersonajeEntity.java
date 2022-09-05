@@ -9,7 +9,8 @@ import java.util.List;
 
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 @Table(name = "personaje")
 public class PersonajeEntity {
     @Id

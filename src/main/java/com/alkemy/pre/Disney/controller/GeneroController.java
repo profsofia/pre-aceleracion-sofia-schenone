@@ -18,13 +18,14 @@ public class GeneroController {
     private GeneroService generoService;
 
     @PostMapping
-    public ResponseEntity<GeneroDTO> guardarGenero(@RequestBody GeneroDTO genero){
+    public ResponseEntity<GeneroDTO> guardarGenero(@RequestBody GeneroDTO genero) {
         GeneroDTO generoGuardado = generoService.guardar(genero);
         return ResponseEntity.status(HttpStatus.CREATED).body(generoGuardado);
 
     }
+
     @GetMapping
-    public ResponseEntity<List<GeneroDTO>> generos(){
+    public ResponseEntity<List<GeneroDTO>> generos() {
         List<GeneroDTO> generos = generoService.getAllGeneros();
         return ResponseEntity.ok().body(generos);
     }

@@ -2,6 +2,7 @@ package com.alkemy.pre.Disney.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "peliculas")
+@SQLDelete(sql = "UPDATE peliculas SET deleted=true WHERE id = ?")
 public class PeliculaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -32,17 +34,6 @@ public class PeliculaEntity {
     @Size(min = 1, max = 5, message = "la calificación debe estar entre 1 y 5")
     private int calificacion; //del 1 al 5
 
-    //personajesAsociados
-    //la pelicula puede tener un solo genero, pero un genero puede pertenecer a muchas peliculas
-/*Eager: devuelve toda la información disponible!!
-* Lazy: devuelve la información cuando se requiere
-*
-* Por defecto!
-* *1 a 1 eager
-* *1 a muchos lazy
-* muchos a 1 eager
-* muchos a muchos lazy
-* */
     @ManyToOne//(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "genero_id", insertable = false, updatable = false)
     private GeneroEntity genero;
@@ -54,9 +45,9 @@ public class PeliculaEntity {
     //Relacion entre personajes y peliculas
     @ManyToMany
             (cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
     @JoinTable(
             name = "personajes_peliculas",
             joinColumns = @JoinColumn(name = "personaje_id"),
@@ -68,3 +59,16 @@ public class PeliculaEntity {
     private Boolean borrado;
 
 }
+
+
+//personajesAsociados
+//la pelicula puede tener un solo genero, pero un genero puede pertenecer a muchas peliculas
+/*Eager: devuelve toda la información disponible!!
+ * Lazy: devuelve la información cuando se requiere
+ *
+ * Por defecto!
+ * *1 a 1 eager
+ * *1 a muchos lazy
+ * muchos a 1 eager
+ * muchos a muchos lazy
+ * */

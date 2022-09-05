@@ -8,11 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class PersonajeServiceImpl implements PersonajeService{
+public class PersonajeServiceImpl implements PersonajeService {
     @Autowired
     private PersonajeMapper personajeMapper;
     @Autowired
     private PersonajeRepository personajeRepository;
+
     @Override
     public PersonajeDTO guardar(PersonajeDTO personajeDTO) {
         PersonajeEntity personaje = personajeMapper.personajeDTOtoEntity(personajeDTO);
@@ -20,6 +21,31 @@ public class PersonajeServiceImpl implements PersonajeService{
         PersonajeDTO resultPersonajeDTO = personajeMapper.personajeEntitytoDTO(personajeSaved);
         System.out.println("personaje Guardado");
         return resultPersonajeDTO;
+    }
+
+    @Override
+    public PersonajeDTO editar(PersonajeDTO personajeDTO) {
+        return null;
+    }
+
+    @Override
+    public PersonajeDTO eliminar() {
+        return null;
+    }
+
+    @Override
+    public PersonajeDTO actualizar() {
+        return null;
+    }
+
+    @Override
+    public PersonajeDTO detalle() {
+        return null;
+    }
+
+    @Override
+    public PersonajeDTO buscar() {
+        return null;
     }
 
     @Override

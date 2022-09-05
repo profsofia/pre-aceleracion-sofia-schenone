@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class PeliculaMapper {
 
-    public PeliculaEntity peliculaDTOtoEntity(PeliculaDTO dto){
+    public PeliculaEntity peliculaDTOtoEntity(PeliculaDTO dto) {
         PeliculaEntity pelicula = new PeliculaEntity();
         //cuando llega un dto no tiene id, por eso no se setea
         pelicula.setImagen(dto.getImagen());
@@ -20,7 +20,8 @@ public class PeliculaMapper {
         pelicula.setGenero(dto.getGenero());
         return pelicula;
     }
-    public PeliculaDTO peliculaEntitytoDTO(PeliculaEntity entity){
+
+    public PeliculaDTO peliculaEntitytoDTO(PeliculaEntity entity) {
         PeliculaDTO dto = new PeliculaDTO();
         dto.setId(entity.getId());
         dto.setImagen(entity.getImagen());
@@ -30,11 +31,12 @@ public class PeliculaMapper {
         dto.setGenero(entity.getGenero());
         return dto;
     }
-    public List<PeliculaDTO> peliculaEntityListToDTOList(List<PeliculaEntity> peliculaEntities){
+
+    public List<PeliculaDTO> peliculaEntityListToDTOList(List<PeliculaEntity> peliculaEntities) {
         //creamos la lista de dtos
         List<PeliculaDTO> peliculaDTOList = new ArrayList<>();
         //hacemos un ciclo para que se llene la lista
-        for (PeliculaEntity pelicula : peliculaEntities){
+        for (PeliculaEntity pelicula : peliculaEntities) {
             peliculaDTOList.add(peliculaEntitytoDTO(pelicula));
         }
         return peliculaDTOList;

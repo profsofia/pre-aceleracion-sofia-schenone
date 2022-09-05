@@ -17,7 +17,7 @@ public class PeliculaController {
     private PeliculaService peliculaService;
 
     @PostMapping
-    public ResponseEntity<PeliculaDTO> guardarPelicula(@RequestBody PeliculaDTO peliculaDTO){
+    public ResponseEntity<PeliculaDTO> guardarPelicula(@RequestBody PeliculaDTO peliculaDTO) {
         PeliculaDTO peliculaGuardada = peliculaService.guardar(peliculaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(peliculaGuardada);
     }
