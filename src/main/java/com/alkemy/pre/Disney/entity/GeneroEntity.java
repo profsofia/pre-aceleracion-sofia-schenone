@@ -28,4 +28,6 @@ public class GeneroEntity {
     //@JoinColumn(name = "genero_id")
     //en este caso, la relación será Lazy.... uno a muchos...
     private List<PeliculaEntity> peliculas = new ArrayList<>();
+
+    private Boolean borrado;
 }

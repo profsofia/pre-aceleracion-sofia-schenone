@@ -17,3 +17,23 @@ creado con spring boot
 > Hibernate utiliza las mismas operaciones que JPA, añadiendo otras propias. 
 ## FUENTE!
 [https://www.nestoralmeida.com/](https://www.nestoralmeida.com/cascade-en-jpa-hibernate/#2-diferencia-entre-persist-y-merge)
+### DTOs
+nos ayudan a mover datos de un objeto a otro
+Se usan para transferir múltiples datos en un solo llamado...
+### Hard delete y soft Delete
+hard delete es el borrado directamente en la db mientras que soft delete es un borrado lógico, 
+marco la información como que fué borrada cuando en realidad no lo fué.
+@SQLDelete es una anotación proporcionada por Hibernate que nos permite realizar un 
+borrado lógico cuando el método delete de JPA es invocado.
+Esta anotación puede recibir tres parámetros de entrada:
+
+- sql: Procedure name or SQL UPDATE/DELETE statement.
+- callable:Is the statement callable (aka a CallableStatement)
+- check: For persistence operation what style of determining results (success/failure) is to be used.
+- @Where
+  Esta anotación nos va a permitir establecer un filtro a la hora de mostrar nuestro objeto:
+### Restfull
+Uno de los principales fallos de estandarización a la hora de crear APIs RESTful 
+está relacionado con el patrón de los endpoints creados (URLs de acceso al servicio). 
+El estándar RESTful exige el uso de sustantivos, no de verbos o nombres de métodos.
+Su API RESTful debe utilizar necesariamente el cifrado SSL.

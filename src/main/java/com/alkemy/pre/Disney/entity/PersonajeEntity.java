@@ -26,4 +26,6 @@ public class PersonajeEntity {
 
     @ManyToMany(mappedBy = "personaje")//, cascade = CascadeType.ALL)
     private List<PeliculaEntity> peliculaEntities = new ArrayList<>();
+
+    private Boolean borrado;
 }

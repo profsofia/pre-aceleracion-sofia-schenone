@@ -65,4 +65,6 @@ public class PeliculaEntity {
     //no es list porque la colección set es mas eficiente
     private Set<PersonajeEntity> personaje = new HashSet<>();
 
+    private Boolean borrado;
+
 }
