@@ -3,6 +3,9 @@ Proyecto Disney peliculas y series
 
 creado con spring boot
 
+## Identar
+identar el código, el atajo (shor-cut) es Ctrl + Alt + L.
+
 # Notas
 ### Las operaciones en cascada de JPA / Hibernate, representadas en el enum javax.persistence.CascadeType, son:
 

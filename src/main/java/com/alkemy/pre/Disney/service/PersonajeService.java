@@ -1,6 +1,7 @@
 package com.alkemy.pre.Disney.service;
 
 import com.alkemy.pre.Disney.dto.PersonajeDTO;
+import com.alkemy.pre.Disney.entity.PersonajeEntity;
 
 import java.util.List;
 
@@ -9,13 +10,13 @@ public interface PersonajeService {
 
     PersonajeDTO editar(PersonajeDTO personajeDTO);
 
-    PersonajeDTO eliminar();
+    PersonajeDTO eliminar(Long id);
 
-    PersonajeDTO actualizar();
+    PersonajeDTO actualizar(PersonajeDTO personajeDTO);
 
-    PersonajeDTO detalle();
+    PersonajeDTO detalle(Long id);
 
-    PersonajeDTO buscar();
+    PersonajeEntity buscar(Long id);
 
     List<PersonajeDTO> getAllPersonajes();
 }
